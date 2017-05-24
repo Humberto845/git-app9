@@ -19,7 +19,7 @@ function onDeviceReady(){
 
 		function getPosition(){
 			
-			var options ={
+			var options = {
 				enableHighAccuracy:true,
 				maximumAge:3600000
 			}
@@ -47,7 +47,7 @@ function onDeviceReady(){
 			
 			var options={
 				maximumAge: 3600000,
-				timeout:300;
+				timeout:300,
 				enableHighAccuracy : true,
 			}
 			
