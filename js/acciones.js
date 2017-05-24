@@ -1,34 +1,34 @@
 // JavaScript Document
 
-$(document).ready(function (e){
+$(document).ready(function(e){
 	document.addEventListener ("deviceready", onDeviceReady, false);
 	
 });
 
 function onDeviceReady(){
 	
-	$('#posicion').on ('click',function(){
+	$('#posiscion').on ('click', function(){
 		getPosition ();
 	});
-
-	$('#watch').on('click',function(){
-		watchPosition ();
+	
+	$('#watch').on('click', function(){
+		watchPosition();
 	});
 	
 }
 
-		function getPosition(){
-			
-			var options = {
-				enableHighAccuracy:true,
-				maximumAge:3600000
-			}
-			
-			var watchID=navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
-			
-			function onSuccess(position){
-				
-				alert('Latitude:' 			+position.coords.latitude 		+'\n'+
+function getPosition(){
+	
+	var options={
+		enableHighAccuracy:true,
+		maximum:3600000
+	}
+	
+	var watchID=navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+	
+	function onSuccess(position){
+		
+		alert('Latitude:' 			+position.coords.latitude 		+'\n'+
 				'Longitude:'				+position.coords.longitude 		+'\n'+
 				'Altitude:'					+position.coords.altitude		+'\n'+
 				'Accuracy:'					+position.coords.accuracy		+'\n'+	
@@ -36,22 +36,22 @@ function onDeviceReady(){
 				'Heading:'					+position.coords.heading		+'\n'+	
 				'Speed:'					+position.coords.speed		+'\n'+	
 				'Timestamp:'					+position.timestamp		+'\n');
-			};
-			
-			function onError(error){
-				alert('code:'	+error.code		+'\n' + 'message:' error.message + '\n');
-			}
-		}
-		
-		function watchPosition(){
+	};
+	
+	function onError(error){
+		alert('code:' + error.code + '\n' +'message:' + error.message + '\n');
+	}
+}
+
+function watchPosition(){
 			
 			var options={
 				maximumAge: 3600000,
 				timeout:300,
 				enableHighAccuracy : true,
 			}
-			
-			var watchId= navigator.geolocation.watchPosition(onSuccess, onError, options);
+
+		var watchId= navigator.geolocation.watchPosition(onSuccess, onError, options);
 			
 			function onSuccess(position){
 				
@@ -66,6 +66,6 @@ function onDeviceReady(){
 			};
 			
 			function onError(error){
-					alert('code:'	+error.code	 + '\n'+'message:' error.message  + '\n');
+					alert('code:'	+error.code	 + '\n'+'message:' + error.message  + '\n');
 			}
-		}
+}
